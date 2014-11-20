@@ -1,0 +1,19 @@
+<h3><%= (post.isNew()) ? 'Create New Post' : 'Edit Post' %></h3>
+<form>
+  <label>
+    Title
+    <input type="text"
+           name="post[title]"
+           value="<%= (post) ? post.escape('title') : "" %>">
+  </label>
+  <br>
+  <br>
+  <label>
+    Content
+    <textarea name="post[body]"
+        ><%=  (post) ? post.escape('body') : "" %></textarea>
+  </label>
+  <br>
+  <br>
+  <input type="submit" value="<%= (post.isNew()) ? 'Create New' : 'Edit Post' %>">
+</form>

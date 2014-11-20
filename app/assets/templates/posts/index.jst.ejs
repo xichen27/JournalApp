@@ -1,0 +1,20 @@
+<h3>Index:</h3>
+<a href="#/posts/new">Create new Post</a>
+<ul class="posts">
+  <% posts.each(function(post){ %>
+    <li>
+      <a href="#/posts/<%= post.get('id') %>">
+        Title: <%=post.escape("title")%>
+      </a>
+      <p>Body: <%=post.escape("body")%></p>
+      <p>Updated At: <%=post.escape("updated_at")%></p>
+      <button type="button"
+              data-id="<%=post.id%>"
+              class="delete-button">
+              Delete
+      </button>
+      <a href="#/posts/<%= post.get('id') %>/edit">Edit Post</a>
+    </li>
+    <br>
+  <% }) %>
+</ul>
